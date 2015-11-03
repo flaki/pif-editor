@@ -53,7 +53,7 @@
 
         // Update sprite data in output textarea
         document.getElementById("spriteoutput").textContent = "// w: " +pixels.w+ " h: " +pixels.h
-          + "\nPROGMEM const unsigned char " +pixels.id+ "[] = { " +pixels.sprite+ " };\n";
+          + "\nPROGMEM const unsigned char " +pixels.id.replace(/\W/g,'_')+ "[] = { " +pixels.sprite+ " };\n";
 
         console.log(pixels.pif);
         console.log("Dimensions:\n", pixels.w, "x", pixels.h);
@@ -134,7 +134,7 @@
 
           // Update sprite data in output textarea
           document.getElementById("spriteoutput").textContent = "// w: " +pixels.w+ " h: " +pixels.h
-            + "\nPROGMEM const unsigned char " +pixels.id+ "[] = { " +pixels.sprite+ " };\n";
+            + "\nPROGMEM const unsigned char " +pixels.id.replace(/\W/g,'_')+ "[] = { " +pixels.sprite+ " };\n";
          };
 
         r.send();

@@ -99,7 +99,29 @@ app.listen(80);
 
 
 function reset() {
-  bitmaps = [ new PixelData( fs.readFileSync('./sprites/' +currentBitmapId+ '.txt').toString() ) ];
+  var bitmap;
+
+  var extensions = [ '', '.txt', '.pif', '.bmp' ];
+
+  // Try loading the file with different extensions (none/pif/txt/bmp)
+  do {
+    try {
+      bitmap = new PixelData( fs.readFileSync('./sprites/' + currentBitmapId + extensions.pop()) );
+      bitmap.id = currentBitmapId;
+      console.log(bitmap.pif);
+
+      bitmaps = [ bitmap ];
+      return;
+    } catch(e) {
+      if (e.code !== 'ENOENT') {
+        console.log("Error loading sprite: ", e);
+      }
+
+      if (extensions.length === 0) break;
+    }
+  } while (extensions.length);
+
+  console.log("Cannot load sprite: ", currentBitmapId);
 }
 
 function clear() {
