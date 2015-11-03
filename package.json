@@ -1,0 +1,32 @@
+{
+  "name": "pif-editor",
+  "version": "0.1.0",
+  "description": "PIF (Pixeldata Interchange Format) editor",
+  "main": "editor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flaki/pif-editor.git"
+  },
+  "author": "Flaki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flaki/pif-editor/issues"
+  },
+  "homepage": "https://github.com/flaki/pif-editor#readme",
+  "keywords": [
+    "pixeldata",
+    "editor",
+    "arduino",
+    "arduboy",
+    "pif"
+  ],
+  "dependencies": {
+    "pif": "*",
+    "koa": "^1.1.1",
+    "koa-body": "^1.3.0",
+    "pepjs": "^0.3.0"
+  }
+}
